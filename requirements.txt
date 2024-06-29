@@ -1,0 +1,13 @@
+black
+build
+flake8
+mypy
+mypy-extensions
+pyproject_hooks
+pytest
+pytest-cov
+pytest-mypy-plugins
+result
+slixmpp
+slixmpp_omemo
+twine
