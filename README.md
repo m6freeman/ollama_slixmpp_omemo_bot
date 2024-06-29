@@ -43,3 +43,9 @@ Recommended and tested clients:
 ## Development
 
 Read the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
+## Credit
+
+[Slixmpp OMEMO plugin
+Copyright (C) 2010  Nathanael C. Fritz
+Copyright (C) 2019 Maxime “pep” Buquet <pep@bouah.net>](https://codeberg.org/sxavier/slixmpp-omemo/src/branch/main/examples/echo_client.py)
