@@ -29,7 +29,7 @@ ollama serve
 
 Second Terminal instance
 ```bash
-./ollama_slixmpp_omemo_bot/src/ollama_slixmpp_omemo_bot/ $ PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python python main.py
+PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python python ./src/ollama_slixmpp_omemo_bot/main.py
 # Enter JID: service-account@example-server.im
 # Enter Password: 
 ```
