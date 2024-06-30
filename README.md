@@ -41,10 +41,6 @@ Recommended and tested clients:
 - Profanity
     - You may need to manually trust their fingerprint
 
-## Development
-
-Read the [CONTRIBUTING.md](CONTRIBUTING.md) file.
-
 ## Credit
 
 [Slixmpp OMEMO plugin | Copyright (C) 2010  Nathanael C. Fritz | Copyright (C) 2019 Maxime “pep” Buquet <pep@bouah.net>](https://codeberg.org/sxavier/slixmpp-omemo/src/branch/main/examples/echo_client.py)
