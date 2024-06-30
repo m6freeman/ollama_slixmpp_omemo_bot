@@ -68,10 +68,11 @@ class OllamaBot(ClientXMPP):
 
     async def cmd_help(self, mto: JID, mtype: Optional[MessageTypes]) -> None:
         body = (
-            "I'm the slixmpp-omemo ollama bot! "
+            "Hello, I am the ollama_slixmpp_omemo_bot!"
             "The following commands are available:\n"
             f"{self.cmd_prefix}verbose Send message or reply with log messages\n"
             f"{self.cmd_prefix}error Send message or reply only on error\n"
+            f"Typing anything else will be sent to llama3!\n"
         )
         return await self.encrypted_reply(mto, mtype, body)
 

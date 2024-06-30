@@ -15,7 +15,7 @@ A basic echo-bot built with slixmpp and slixmpp-omemo that relays your messages 
 
 ```bash
 git clone --bare https://github.com/m6freeman/ollama_slixmpp_omemo_bot
-cd repo_name; git worktree add main; cd main
+cd ollama_slixmpp_omemo_bot.git; git worktree add main; cd main
 python -m venv .venv; ./.venv/bin/activate
 pip install -r requirements.txt
 # There is a httpx dependancy conflict. These should be installed in this order.
