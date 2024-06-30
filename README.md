@@ -3,6 +3,8 @@
 
 A basic echo-bot built with slixmpp and slixmpp-omemo that relays your messages to a locally running ollama server with end to end encryption.
 
+<img src="./docs/ollama_slixmpp_omemo_bot.png" width="250">
+
 ## Dependancies
 
 - [ollama 0.1.14](https://ollama.com/download/linux)
@@ -23,11 +25,13 @@ pip install ollama; pip install ollama-python
 ## Usage
 
 First Terminal instance
+
 ```bash
 ollama serve
 ```
 
 Second Terminal instance
+
 ```bash
 PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python python ./src/ollama_slixmpp_omemo_bot/main.py
 # Enter JID: service-account@example-server.im
@@ -40,6 +44,8 @@ Recommended and tested clients:
 - Conversations
 - Profanity
     - You may need to manually trust their fingerprint
+
+Typically when MissingOwnKeys exception raises, starting a new omemo session and manually trusting the fingerprint tends to resolve the issue.
 
 ## Credit
 

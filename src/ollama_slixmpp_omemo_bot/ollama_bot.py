@@ -105,12 +105,16 @@ class OllamaBot(ClientXMPP):
                 encrypted, mfrom, allow_untrusted
             )
             if body is not None:
-                decoded = body.decode("utf8")
+                decoded: Optional[str] = body.decode("utf8")
                 if self.is_command(decoded):
                     await self.handle_command(mto, mtype, decoded)
                 elif self.debug_level == LEVEL_DEBUG:
-                    ollama_server_response = self.message_to_ollama_server(decoded)
-                    await self.encrypted_reply(mto, mtype, f"{ollama_server_response}")
+                    ollama_server_response: Optional[str] = (
+                        self.message_to_ollama_server(decoded)
+                    )
+                    await self.encrypted_reply(
+                        mto, mtype, f"{ollama_server_response or ''}"
+                    )
         except MissingOwnKey:
             await self.plain_reply(
                 mto,
@@ -130,11 +134,11 @@ class OllamaBot(ClientXMPP):
                 f"Error: Your device '{exn.device}' is not in my trusted devices.",
             )
             await self.message_handler(msg, allow_untrusted=True)
-        except (EncryptionPrepareException,):
+        except EncryptionPrepareException:
             await self.plain_reply(
                 mto, mtype, "Error: I was not able to decrypt the message."
             )
-        except (Exception,) as exn:
+        except Exception as exn:
             await self.plain_reply(
                 mto,
                 mtype,
@@ -191,14 +195,15 @@ class OllamaBot(ClientXMPP):
                 )
                 raise
 
-    def message_to_ollama_server(self, msg: str) -> str:
-        response = ollama.chat(
-            model="llama3",
-            messages=[
-                {
-                    "role": "user",
-                    "content": f"{msg}",
-                },
-            ],
-        )
-        return response["message"]["content"]
+    def message_to_ollama_server(self, msg: Optional[str]) -> Optional[str]:
+        if msg is not None:
+            response = ollama.chat(
+                model="llama3",
+                messages=[
+                    {
+                        "role": "user",
+                        "content": f"{msg}",
+                    },
+                ],
+            )
+            return response["message"]["content"]
