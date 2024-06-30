@@ -1,7 +1,7 @@
 
 # Ollama Slixmpp Bot with OMEMO
 
-A basic echo-bot built with slixmpp and slixmpp-omemo that relays your messages to a locally running ollama server.
+A basic echo-bot built with slixmpp and slixmpp-omemo that relays your messages to a locally running ollama server with end to end encryption.
 
 ## Dependancies
 
@@ -12,11 +12,11 @@ A basic echo-bot built with slixmpp and slixmpp-omemo that relays your messages 
 ## Installation
 
 ```bash
-git clone --bare https://github.com/user/repo_name
+git clone --bare https://github.com/m6freeman/ollama_slixmpp_omemo_bot
 cd repo_name; git worktree add main; cd main
 python -m venv .venv; ./.venv/bin/activate
 pip install -r requirements.txt
-# There is a httpx dependancy conflict. These must be installed in this order.
+# There is a httpx dependancy conflict. These should be installed in this order.
 pip install ollama; pip install ollama-python
 ```
 
@@ -39,6 +39,7 @@ With OMEMO and Blind Trust enabled, message service-account@example-server.im fr
 Recommended and tested clients:
 - Conversations
 - Profanity
+    - You may need to manually trust their fingerprint
 
 ## Development
 
@@ -46,6 +47,4 @@ Read the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 ## Credit
 
-[Slixmpp OMEMO plugin
-Copyright (C) 2010  Nathanael C. Fritz
-Copyright (C) 2019 Maxime “pep” Buquet <pep@bouah.net>](https://codeberg.org/sxavier/slixmpp-omemo/src/branch/main/examples/echo_client.py)
+[Slixmpp OMEMO plugin | Copyright (C) 2010  Nathanael C. Fritz | Copyright (C) 2019 Maxime “pep” Buquet <pep@bouah.net>](https://codeberg.org/sxavier/slixmpp-omemo/src/branch/main/examples/echo_client.py)
