@@ -207,3 +207,4 @@ class OllamaBot(ClientXMPP):
                 ],
             )
             return response["message"]["content"]
+        return None
